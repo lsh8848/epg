@@ -1,5 +1,5 @@
 const Config = {
-    repository: 'celetor/epg',
+    repository: 'lsh8848/epg',
     branch: '112114'
 }
 
@@ -90,7 +90,7 @@ function getFormatTime(time) {
 
 async function diypHandle(channel, date, request) {
     const tag = date.replaceAll('-', '.');
-    // https://github.com/celetor/epg/releases/download/2024.02.14/112114.json
+    // https://github.com/lsh8848/epg/releases/download/2024.02.14/112114.json
     const res = await jq_fetch(new Request(`https://github.com/${Config.repository}/releases/download/${tag}/${Config.branch}.json`, request));
     const response = await res.json();
 

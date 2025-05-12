@@ -1,9 +1,11 @@
 name: EPG
-
+# 每天00:21 06:21 12:21 18:21更新(每天00:40 10:15 15:00 18:30更新)
 on:
   schedule:
-    - cron: 0 4,10,22 * * *
-    - cron: 39 15,16 * * *
+    - cron: 21 00 * * *
+    - cron: 21 06 * * *
+    - cron: 21 12 * * *
+    - cron: 21 18 * * *
   workflow_dispatch:
 
 jobs:
@@ -15,10 +17,10 @@ jobs:
         include:
           - url: https://epg.112114.xyz/pp.xml.gz
             branch: 112114
-         #  sleep: 0s
-         # - url: https://gitee.com/Black_crow/xmlgz/raw/master/e.xml.gz
-         #  branch: erw
-            sleep: 30s
+            sleep: 0s
+          #- url: https://e.erw.cc/e.xml.gz
+          #  branch: erw
+          #  sleep: 30秒
           #- url: http://epg.51zmt.top:8000/e.xml
           #  branch: 51zmt
           #  sleep: 60s
@@ -55,14 +57,19 @@ jobs:
           ref: ${{ matrix.branch }}
           path: epg
 
+      - uses: actions/setup-python@v5
+        if: ${{ env.isDiff }}
+        with:
+          python-version: '3.12' 
+
       - name: xml to json
         if: ${{ env.isDiff }}
         working-directory: epg
         run: |
           mkdir ./xml ./json
           mv -f ../e.xml ./xml/e.xml
-          pip3 install -r requirements.txt
-          python3 xml2json.py
+          pip install -r requirements.txt
+          python xml2json.py
 
       - name: move file
         if: ${{ env.isDiff }}

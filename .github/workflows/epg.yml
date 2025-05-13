@@ -17,7 +17,7 @@ jobs:
         include:
           - url: https://epg.112114.xyz/pp.xml.gz
             branch: 112114
-            sleep: 10秒
+            sleep: 3s
           #- url: https://e.erw.cc/e.xml.gz
           #  branch: erw
           #  sleep: 30s

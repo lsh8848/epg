@@ -1,11 +1,11 @@
 name: EPG
-# 每天00:21 06:21 12:21 18:21更新(每天00:40 10:15 15:00 18:30更新)
+# 每天00:20 06:20 12:20 18:20更新(每天00:40 10:15 15:00 18:30更新)
 on:
   schedule:
-    - cron: 21 00 * * *
-    - cron: 21 06 * * *
-    - cron: 21 12 * * *
-    - cron: 21 18 * * *
+    - cron: 20 16 * * *
+    - cron: 20 22 * * *
+    - cron: 20 04 * * *
+    - cron: 20 10 * * *
   workflow_dispatch:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
         include:
           - url: https://epg.112114.xyz/pp.xml.gz
             branch: 112114
-            sleep: 0s
+            sleep: 0秒
           #- url: https://e.erw.cc/e.xml.gz
           #  branch: erw
           #  sleep: 30秒

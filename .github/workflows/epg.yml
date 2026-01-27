@@ -15,15 +15,18 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - url: https://epg.112114.xyz/pp.xml.gz
-            branch: 112114
-            sleep: 0s
+         #- url: https://epg.112114.xyz/pp.xml.gz
+         #  branch: 112114
+         #  sleep: 0s
           - url: http://e.erw.cc/e.xml.gz
             branch: erw
-            sleep: 30s
+            sleep: 10s
           #- url: http://epg.51zmt.top:8000/e.xml
           #  branch: 51zmt
           #  sleep: 60s
+          #- url: https://epg.136605.xyz/1day.xml.gz
+          #  branch: 136605
+          #  sleep: 30s
 
     steps:
       - name: download files

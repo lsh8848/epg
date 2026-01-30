@@ -25,10 +25,10 @@ jobs:
           #  branch: 51zmt
           #  sleep: 60s
           #- url: https://epg.136605.xyz/1day.xml.gz
-          #  branch: 136605
+          #  branch: 112114
           #  sleep: 30s
           #- url: https://epg.zsdc.eu.org/t.xml.gz
-          #  branch: zsdc
+          #  branch: 112114
           #  sleep: 30s
 
     steps:

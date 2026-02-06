@@ -17,7 +17,10 @@ jobs:
          #- url: https://epg.112114.xyz/pp.xml.gz
          #  branch: 112114
          #  sleep: 0s
-          - url: http://e.erw.cc/e.xml.gz
+         #- url: http://e.erw.cc/e.xml.gz
+         #  branch: erw
+         #  sleep: 10s
+          - url: https://raw.githubusercontent.com/kuke31/xmlgz/main/e.xml.gz
             branch: erw
             sleep: 10s
           #- url: http://epg.51zmt.top:8000/e.xml
